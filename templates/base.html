@@ -1,0 +1,27 @@
+{% load static %}
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type='text/css' href="{%static 'styles/main/main.scss'%}">
+  </head>
+  <body>
+    {% block header %} 
+    <header>
+    {% include "main_components/header.html"  %} 
+    </header>
+    {% endblock header %} 
+    {% block maincontent %} 
+    
+    {% endblock maincontent %}
+    {% block footer %} 
+    <footer>
+    {% include "main_components/footer.html"  %} 
+    </footer>
+    {% endblock footer %} 
+
+
+  </body>
+</html>
