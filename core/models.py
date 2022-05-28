@@ -7,12 +7,18 @@ RUOLI= [
     ('ar', 'attore/regista'),
     ]
 
+SALE= [
+    ('nord', 'nord'),
+    ('ovest', 'ovest'),
+    ('est', 'est'),
+    ]
+
 class Persona(models.Model):
     name=models.CharField(max_length=250,blank=True,null=True)
     surname=models.CharField(max_length=250,blank=True,null=True)
     role=models.CharField(max_length=50,
                   choices=RUOLI,blank=True,null=True)
-    nazionalita=models.CharField(max_length=50,blank=True,null=True)
+    nazionality=models.CharField(max_length=50,blank=True,null=True)
     year = models.CharField(max_length=4,blank=True, null=True)
 
     @property
@@ -20,6 +26,10 @@ class Persona(models.Model):
         # format it to datetime object. You need to convert `year` to str if it is `IntergerField`. ex: str(self.year).
         date = datetime.datetime.strptime('%Y', self.year)
         return date
+
+    def __str__(self):
+        return self.name + ' ' + self.surname 
+    
 
 class Film(models.Model):
     cast= models.ManyToManyField(Persona,related_name='cast')
@@ -41,15 +51,30 @@ class Proiezione(models.Model):
     date= models.DateTimeField(blank=True,null=True)
     number_spectators= models.IntegerField(blank=True,null=True)
 
+    def __str__(self):
+        return 'Proiezione di {}'.format(self.film.title)
+
 
 class Cinema(models.Model):
     name=models.CharField(max_length=250,blank=True,null=True)
     url=models.URLField(blank=True,null=True)
     city=models.CharField(max_length=350,null=True,blank=True)
 
+    def __str__(self):
+        return "Cinema" + " "+ self.name
+
+
+
 class Sala(models.Model):
+    name=models.CharField(max_length=50,
+                  choices=SALE,blank=True,null=True)
     proiezione=models.ForeignKey(Proiezione, on_delete=models.CASCADE)
     cinema=models.ForeignKey(Cinema, on_delete=models.CASCADE)
     is_3d=models.BooleanField(default=False,blank=True,null=True)
+
+    def __str__(self):
+        return 'Sala {0} del Cinema {1} '.format(self.name ,self.cinema.name)
+
+
 
 
