@@ -1,0 +1,7 @@
+{
+  "status": "error",
+  "assets": {},
+  "chunks": {},
+  "error": "ModuleNotFoundError",
+  "message": "Module not found: Error: Can't resolve './styles/main.scss' in '/home/fabio/progetti/my_app/static/src/assets/js'"
+}
