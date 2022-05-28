@@ -12,8 +12,14 @@ class Persona(models.Model):
     surname=models.CharField(max_length=250,blank=True,null=True)
     role=models.CharField(max_length=50,
                   choices=RUOLI,blank=True,null=True)
+    nazionalita=models.CharField(max_length=50,blank=True,null=True)
+    year = models.CharField(max_length=4,blank=True, null=True)
 
-
+    @property
+    def get_year(self):
+        # format it to datetime object. You need to convert `year` to str if it is `IntergerField`. ex: str(self.year).
+        date = datetime.datetime.strptime('%Y', self.year)
+        return date
 
 class Film(models.Model):
     cast= models.ManyToManyField(Persona,related_name='cast')
