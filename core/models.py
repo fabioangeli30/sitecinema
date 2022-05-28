@@ -39,7 +39,7 @@ class Proiezione(models.Model):
 class Cinema(models.Model):
     name=models.CharField(max_length=250,blank=True,null=True)
     url=models.URLField(blank=True,null=True)
-    room_number=models.IntegerField(blank=True,null=True)
+    city=models.CharField(max_length=350,null=True,blank=True)
 
 class Sala(models.Model):
     proiezione=models.ForeignKey(Proiezione, on_delete=models.CASCADE)
