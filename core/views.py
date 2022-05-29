@@ -1,8 +1,7 @@
-from django.shortcuts import render
-
-# Create your views here.
-from django.http import HttpResponse
+from .models import Task
+from django.views.generic.list import ListView
 
 
-def index(request):
-    return render(request,"mainpage/mainpage.html")
+class ModelListView(ListView):
+    model = Task
+    template_name = "mainpage/mainpage.html"
