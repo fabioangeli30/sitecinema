@@ -1,9 +1,8 @@
 from .models import Task
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView,UpdateView,DeleteView
 from django.urls import reverse_lazy
-from django.views.generic.edit import UpdateView
 
 class TaskView(ListView):
     model = Task
@@ -27,5 +26,12 @@ class TaskCreateView(CreateView):
 class TaskUpdateView(UpdateView):
     model = Task
     fields = "__all__"
-    template_name = 'mainpage/task_update.html'
+    template_name = 'mainpage/task_form.html'
+    success_url=reverse_lazy('tasks')
+
+
+class  TaskDeleteView(DeleteView):
+    model = Task
+    context_object_name = 'task'
+    template_name = "mainpage/task_delete.html"
     success_url=reverse_lazy('tasks')
