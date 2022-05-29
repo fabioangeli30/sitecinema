@@ -10,19 +10,19 @@
     <link rel="stylesheet" type='text/css' href="{%static 'styles/main/main.scss'%}">
   </head>
   <body>
-   {% comment %}  {% block header %} 
+   {% block header %} 
     <header>
-    {% include "main_components/header.html"  %} 
+    {% include "main-components/header.html"  %} 
     </header>
-    {% endblock header %}  {% endcomment %}
+    {% endblock header %}
     {% block maincontent %} 
     
     {% endblock maincontent %}
-    {% comment %} {% block footer %} 
+    {% block footer %} 
     <footer>
-    {% include "main_components/footer.html"  %} 
+    {% include "main-components/footer.html"  %} 
     </footer>
-    {% endblock footer %}  {% endcomment %}
+    {% endblock footer %}
 
 
   </body>
