@@ -20,11 +20,16 @@ class CustomLoginView(LoginView):
 
 class RegisterView(FormView):
     template_name = 'register/register.html'
-    form_class= UserCreationForm
+    form_class = UserCreationForm
     redirect_authenticated_user = True
+    success_url = reverse_lazy('tasks')
 
-    def get_success_url(self):
-        return reverse_lazy("tasks")
+    def form_valid(self, form):
+        user = form.save()
+        if user is not None:
+            login(self.request, user)
+        return super(RegisterView, self).form_valid(form)
+
 
 class TaskView(LoginRequiredMixin, ListView):
     model = Task
@@ -35,6 +40,9 @@ class TaskView(LoginRequiredMixin, ListView):
         context = super().get_context_data(**kwargs)
         context['tasks'] = context['tasks'].filter(user=self.request.user)
         context['count'] = context['tasks'].filter(complete=False)
+        search_input = self.request.GET.get('search-area') or ''
+        if search_input:
+            context['tasks'] = context['tasks'].filter(title__icontains=search_input)
         return context
 
 
