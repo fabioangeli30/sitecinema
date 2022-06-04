@@ -1,18 +1,42 @@
 {
   "status": "done",
   "assets": {
-    "bundle-397daffa3d96d73ebc9f.css": {
-      "name": "bundle-397daffa3d96d73ebc9f.css",
-      "path": "/home/fabio/progetti/progettoaereo/my_app/static/src/assets/dist/bundle-397daffa3d96d73ebc9f.css"
+    "bundle-816783ebbf456aba444d.css": {
+      "name": "bundle-816783ebbf456aba444d.css",
+      "path": "/home/fabio/progetti/progettoaereo/my_app/static/src/assets/dist/bundle-816783ebbf456aba444d.css"
     },
     "bundle.js": {
       "name": "bundle.js",
       "path": "/home/fabio/progetti/progettoaereo/my_app/static/src/assets/dist/bundle.js"
+    },
+    "bundle-397daffa3d96d73ebc9f.css": {
+      "name": "bundle-397daffa3d96d73ebc9f.css",
+      "path": "/home/fabio/progetti/progettoaereo/my_app/static/src/assets/dist/bundle-397daffa3d96d73ebc9f.css"
+    },
+    "bundle-10ff0068b4328c4cd9fd.css": {
+      "name": "bundle-10ff0068b4328c4cd9fd.css",
+      "path": "/home/fabio/progetti/progettoaereo/my_app/static/src/assets/dist/bundle-10ff0068b4328c4cd9fd.css"
+    },
+    "bundle-3934ba54ab11cfe35ee2.css": {
+      "name": "bundle-3934ba54ab11cfe35ee2.css",
+      "path": "/home/fabio/progetti/progettoaereo/my_app/static/src/assets/dist/bundle-3934ba54ab11cfe35ee2.css"
+    },
+    "bundle-7b4aa8d4d715bad142c6.css": {
+      "name": "bundle-7b4aa8d4d715bad142c6.css",
+      "path": "/home/fabio/progetti/progettoaereo/my_app/static/src/assets/dist/bundle-7b4aa8d4d715bad142c6.css"
+    },
+    "bundle-728db67a63164c619137.css": {
+      "name": "bundle-728db67a63164c619137.css",
+      "path": "/home/fabio/progetti/progettoaereo/my_app/static/src/assets/dist/bundle-728db67a63164c619137.css"
+    },
+    "bundle-1d8f434c68a1c19fda1b.css": {
+      "name": "bundle-1d8f434c68a1c19fda1b.css",
+      "path": "/home/fabio/progetti/progettoaereo/my_app/static/src/assets/dist/bundle-1d8f434c68a1c19fda1b.css"
     }
   },
   "chunks": {
     "bundle": [
-      "bundle-397daffa3d96d73ebc9f.css",
+      "bundle-1d8f434c68a1c19fda1b.css",
       "bundle.js"
     ]
   }
