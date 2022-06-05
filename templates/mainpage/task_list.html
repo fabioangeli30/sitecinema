@@ -4,11 +4,11 @@
 <div class="container header-card rounded-2 border border-primary border-3">
   <div class="row">
     <div class="col d-flex justify-content-end">
-      <a class="h3" href="{% url 'logout' %}">Logout</a>
+      <a class="h3 text-white text-decoration-none" href="{% url 'logout' %}">Logout</a>
     </div>
   </div>
-<h1>Ciao {{request.user}}</h1>
-<h4 class="pb-3">You have {{count}} incompleted tasks</h4>
+<h1 class="text-white">Ciao {{request.user}}</h1>
+<h4 class="pb-3 text-white">You have {{count}} incompleted tasks</h4>
 </div>
 {% else %} 
 
@@ -21,7 +21,7 @@
 <div id="search-add-wrapper">
   <form method="GET" style="display: flex;">
       <input type='text' name='search-area' placeholder="Search your task" value="{{search_input}}">
-      <input class="button" type="submit" value='Search'>
+      <input class="button text" type="submit" value='Search'>
   </form>
   {% if tasks|length > 0 %}
   <a id="add-link" href="{% url 'task-create' %}">&#x2b;</a>

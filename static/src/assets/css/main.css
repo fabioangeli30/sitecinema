@@ -92,11 +92,7 @@
     padding: 20px;
 }
 
-@media screen and (max-width:320px) {
-    #search-add-wrapper {
-        padding: 10px;
-    }
-}
+
 
 input[type=text],
 input[type=password],
@@ -130,4 +126,13 @@ label {
 
 .card-body {
     padding: 20px;
+}
+
+.text-violet{
+    color:rgb(162, 0, 255)
+}
+@media screen and (max-width:320px) {
+    #search-add-wrapper {
+        padding: 10px;
+    }
 }
